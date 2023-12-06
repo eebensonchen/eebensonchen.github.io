@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1200px;
+            height: 500px;
+            outline: 1px solid aqua;
+            z-index: 2;
+        }
+        a::after{
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            outline: 1px solid greenyellow;
+            display: block;
+            position: relative;
+            bottom: 400px;
+            left: 450px;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        a {
+            width: 300px;
+            outline: 1px solid blue;
+        }
+        img {
+            object-fit: cover;
+            width: 500px;
+            height: 400px;
+            object-position: right bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"><img src="picture\01.png"></div>
+
+    <a href="#"><img src="picture\02.png"></a>
+</body>
+</html>
