@@ -1,0 +1,131 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+h3 {
+    font-size: 26px;
+    font-weight: bold;
+}
+.header {
+    background-color: rgb(244, 244, 244);
+    width: 100%;
+    text-align: center;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.head-title {
+    font-size: 30px;
+    word-wrap: break-word;
+    width: 300px;
+    margin-bottom: 30px;
+}
+.head-text {
+    font-size: 16px;
+}
+
+.item {
+    display: flex;
+    width: 1050px;
+    margin: 80px 0px;
+}
+.item-info {
+    width: 510px;
+    margin-right: 100px;
+}
+.item-title {
+    margin: 0px 0px 30px 0px;
+}
+.item-text {
+    margin-bottom: 30px;
+}
+.img {
+    width: 460px;
+
+}
+img {
+    width: 100%;
+    object-fit: cover;
+}
+.fuc-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 20px;
+    list-style: none;
+}
+.fuc span{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: blue;
+    display: block;
+    margin: 10px 10px 20px 0px;
+    margin-left: 10px;
+    text-align: middle;
+}
+.fuc {
+    width: 50%;
+    text-indent: 0.6em;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+.item-info a {
+    margin: 30px 100px 0px 0px;
+    display: block;
+    padding-left: 30px;
+}
+.card-list .item:nth-child(2)  {
+    flex-direction: row-reverse;
+}
+.card-list .item:nth-child(2) .item-info {
+    margin-left: 100px;
+    margin-right: 0px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #f8f8f8;
+}
+.footer-title {
+    margin-top: 70px;
+    text-align: center;
+}
+.footer-group {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 70px auto 0px auto;
+}
+.footer-content {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-img {
+    width: 80px;
+}
+.footer-img img {
+    width: 100%;
+    object-fit: cover;
+}
+.footer-name {
+    margin-top: 30px;
+}
+.footer-text {
+    font-size: 18px;
+    margin: 20px 50px 50px 50px;
+}
+
