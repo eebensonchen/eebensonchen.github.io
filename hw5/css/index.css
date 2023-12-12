@@ -1,0 +1,676 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.page {
+    margin: 0px auto;
+    background-color: rgb(250, 250, 253);
+}
+a {
+    text-decoration: none;
+}
+
+/* header */
+.header {
+    display: flex;
+    position: sticky;
+    top: 0px;
+    background-color: #fff;
+    justify-content: center;
+    margin: 0px auto;
+    z-index: 10;
+}
+.header .logo {
+    width: 300px;
+    margin: auto 10px ;
+}
+.nav {
+    display: flex;
+    /* padding: 40px 300px 40px 10px; */
+    width: 720px;
+    justify-content: end;
+    margin: 40px 0px 40px 0px;
+}
+.nav :first-child a {
+    text-decoration: underline #ccc;
+    text-underline-offset: 10px;
+}
+.link a:hover {
+    text-decoration: underline #ccc;
+    text-underline-offset: 10px;
+    transition: text-decoration .4s linear;
+}
+.header .white-btn {
+    width: 180px;
+    margin: 10px 10px;
+    font-size: 14px;
+    display: flex;
+}
+.header .white-btn a {
+    display: block;
+    border: 1px solid #ccc;
+    color: black;
+    width: 75PX;
+    padding: 12px 20px;
+    text-align: center;
+    margin: auto 5px auto auto;
+    border-radius: 5px;
+}
+.link {
+    margin: 2px 28px 2px 0px;
+    font-size: 20px;
+}
+
+/* container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* focus */
+.focus {
+    display: flex;
+    width: 1200px;
+    margin: 30px 0px 100px 0px;
+}
+.focus-info {
+    width: 600px;
+}
+.focus-info h1{
+    font-size: 72px;
+    margin-top: 100px;
+    font-weight: lighter;
+}
+.focus-info h2 {
+    font-size: 50px;
+    margin-top: 80px;
+    font-weight: lighter;
+}
+.focus-info p {
+    width: 400px;
+    margin: 30px 0px 30px 0px;
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 1.4em;
+    color: #bbb;
+}
+.fun {
+    display: flex;
+}
+.fun .green-btn,.fun .white-btn {
+    font-size: 14px;
+    display: flex;
+}
+.fun .green-btn a,.fun .white-btn a {
+    border: 1px solid #ccc;
+    padding: 12px 1em;
+    text-align: center;
+    margin: auto 0px;
+    border-radius: 5px;
+}
+.fun .white-btn a {
+    color: black;
+}
+.fun .green-btn a {
+    color: white;
+    background-color: rgb(59, 220, 137);
+    box-shadow: 0px 10px 50px -10px rgb(59, 220, 137);
+}
+.green-btn+.white-btn {
+    margin-left: 20px;
+}
+.fun .video-btn {
+    margin-left: 40px;
+}
+.focus-img {
+    width: 600px;
+}
+/* 雲 */
+.focus:nth-child(1) .focus-img {
+    position: relative;
+}
+.focus:nth-child(1) .focus-img img:nth-child(2) {
+    position: absolute;
+    right: 343px;
+    bottom: 355px;
+    z-index: 0;
+}
+.focus:nth-child(1) .focus-img img:nth-child(1) {
+    z-index: 2;
+    position: relative;
+}
+.focus-img img {
+    object-fit: contain;
+}
+/* 第 2 個 focus 圖文要交換 */
+.container .focus:nth-child(2) {
+    flex-direction: row-reverse;
+}
+.container .focus:nth-child(2) .focus-img {
+    margin-right: 100px;
+    position: relative;
+}
+/* 雲 */
+.focus:nth-child(2) .focus-img img:nth-child(2) {
+    position: absolute;
+    left: -240px;
+    top: -70px;
+    z-index: 0;
+}
+/* 放在前面，無法正常變換顏色 */
+.white-btn a:hover {
+    background-color: rgb(59, 220, 137);
+    color: #fff;
+    transition: background-color .4s linear;
+}
+.green-btn a:hover {
+    background-color: rgb(98, 98, 116);
+    transition: box-shadow .2s linear;
+    transition: background-color .4s linear;
+    box-shadow: none;
+}
+/* cardlist */
+.cardlist {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    position: relative;
+}
+.cardlist h2 {
+    width: 1200px;
+    font-size: 50px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+}
+/* 雲 */
+.cardlist>img:nth-of-type(1) {
+    position: absolute;
+    left: -250px;
+    bottom: 150px;
+}
+.cardlist>img:nth-of-type(2) {
+    position: absolute;
+    right: -245px;
+    top: -50px;
+}
+.card {
+    background-color: #fff;
+    width: 370px;
+    margin: 15px 15px 15px 15px;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.card-img {
+    margin-bottom: 30px;
+}
+.card-img img {
+    /* 讓圖片由矩形變成圓形 */
+    border-radius: 50%;  
+    box-shadow: 0px 8px 32px 0px rgba(31,222,130,0.46);
+}
+.card-title {
+    margin: 30px 0px;
+    font-size: 26px;
+}
+.card-text {
+    line-height: 1.4em;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+.readmore {
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+}
+.readmore :hover {
+    color: rgb(59, 220, 137);
+    transition: color .2s linear;
+}
+/* 雲 */
+.container :nth-child(4) .focus-img {
+    position: relative;
+}
+.container :nth-child(4) .focus-img :nth-child(1) {
+    position: relative;
+    z-index: 1;
+}
+.container :nth-child(4) .focus-img :nth-child(2) {
+    position: absolute;
+    right: 40px;
+    bottom: 350px;
+}
+.container :nth-child(4) .focus-img :nth-child(3) {
+    position: absolute;
+    right: 400px;
+    bottom: 50px;
+}
+/* banner */
+.banner {
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    background-color: rgb(40, 120, 256);
+    color: #fff;
+    justify-content: center;
+}
+.banner .focus-info {
+    width: 500px;
+    margin: 100px 0px 0px 70px;
+    position: relative;
+}
+.banner h2 {
+    width: 400px;
+}
+.banner p {
+    color: #fff;
+    width: 350px;
+}
+/* 雲 */
+.container :nth-child(5) .focus-info > img:nth-of-type(1){
+    position: absolute;
+    right: -200px;
+    top: 450px;
+} 
+.container :nth-child(5) .focus-info > img:nth-of-type(2){
+    position: absolute;
+    right: -150px;
+    top: 100px;
+} 
+.container :nth-child(5) .focus-info > img:nth-of-type(3){
+    position: absolute;
+    right: -270px;
+    top: 30px;
+} 
+.focus-cardlist {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    padding: 70px 0px;
+}
+.focus-card {
+    background-color: rgb(70, 140, 256);
+    width: 270px;
+    margin: 15px;
+    box-sizing: border-box;
+    padding: 50px 30px 50px 20px;
+    border-radius: 10px;
+}
+.number-stat-block {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+.number-stat-blocktext {
+    line-height: 1.4em;
+}
+.blue-btn {
+    outline: 1px solid #fff;
+    padding: 12px 1em;
+    text-align: center;
+    margin: auto 0px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.blue-btn:hover {
+    background-color: rgb(59, 220, 137);
+    transition: background-color .4s linear;
+    outline: none;
+}
+/* steps-map */
+.steps-map h3 {
+    margin: 100px 0px 80px 0px;
+    font-size: 50px;
+    font-weight: lighter;
+}
+/* 雲 */
+.steps-map {
+    position: relative;
+}
+.steps-map > img:nth-of-type(1) {
+    position: absolute;
+    right: -250px;
+    bottom: 100px;
+}
+.steps-map > img:nth-of-type(2) {
+    position: absolute;
+    left: -250px;
+    top: 700px;
+}
+.steps-map > img:nth-of-type(3) {
+    position: absolute;
+    right: -250px;
+    top: 290px;
+}
+.step {
+    display: flex;
+    margin-top: 20px;
+}
+.step-img {
+    width: 320px;
+}
+.step-img img {
+    width: 100%;
+}
+.step-info {
+    display: flex;
+    width: 880px;
+}
+.step:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.guid {
+    width: 250px;
+    display: flex;
+    align-items: center;
+}
+.guid-icon {
+    margin: auto 10px auto auto;
+    border-radius: 50%;
+    box-shadow: 0px 8px 32px 0px rgba(31,222,130,0.46);
+}
+.arrow {
+    position: relative;
+}
+.arrow img {
+    position: absolute;
+}
+.step-content {
+    padding: 0px 30px;
+    width: 400px;
+}
+.slg {
+    font-size: 26px;
+    margin-top: 75px;
+}
+.step-text {
+    margin-top: 20px;
+    line-height: 1.4em;
+    color: #aaa;
+}
+.arrow1 img {
+    right: 70px;
+    top: 65px;
+    
+}
+.arrow2 img {
+    left: -60px;
+    top: 60px;
+}
+.arrow3 img {
+    right: 55px;
+    top: 50px;
+}
+.arrow4 img {
+    left: -70px;
+    top: 65px;
+}
+.guid2 {
+    margin-left: 90px;
+}
+.guid4 {
+    margin-left: 00px;
+}
+.step-img1 {
+    width: 250px;
+}
+.step-img5 {
+    width: 270px;
+}
+/* project-display */
+.project-display {
+    width: 100%;
+    background-color: rgb(245, 245, 256);
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+/* 雲 */
+.project-display > img {
+    position: absolute;
+    left: 0px;
+    top: 250px;
+}
+.displayheader {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.displayheader h2 {
+    font-size: 50px;
+    margin: 150px 0px 0px 0px;
+    font-weight: 100;
+    width: 500px;
+}
+.displayheader .green-btn {
+    margin: auto 0px 10px 0px ;
+}
+.displayheader .green-btn a {
+    color: white;
+    background-color: rgb(59, 220, 137);
+    box-shadow: 0px 10px 50px -10px rgb(59, 220, 137);
+    border: 1px solid #ccc;
+    padding: 12px 1em;
+    text-align: center;
+    margin: auto 0px;
+    border-radius: 5px;
+}
+.displayheader .green-btn a:hover {
+    background-color: rgb(98, 98, 116);
+    transition: box-shadow .2s linear;
+    transition: background-color .4s linear;
+    box-shadow: none;
+}
+.project-list {
+    display: flex;
+}
+.project-info {
+    margin: 5px 15px 100px 15px;
+}
+.project-img {
+    width: 370px;
+    position: relative;
+}
+.project-img img {
+    border-radius: 10px;
+}
+.hover {
+    margin: 0px;
+    height: 404px;
+    padding: 70px 30px 0px 30px;
+    background-color: rgb(59, 220, 137);
+    width: 100%;
+    color: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.hover-title {
+    font-size: 42px;
+    margin-bottom: 150px;
+}
+.hover-title+a{
+    font-size: 14px;
+    color: #fff;
+}
+.hover:hover {
+    opacity: .95;
+    transition: opacity .2s linear;
+}
+.hover-title+a:hover {
+    color: #666;
+    transition: color .2s linear;
+}
+/*  input-area */
+.input-area {
+    display: flex;
+    margin: 120px 0px;
+    position: relative;
+}
+/* 雲 */
+.input-area > img {
+    position: absolute;
+    right: -300px;
+    top: -50px;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 70px 50px;
+    margin-left: 100px;
+}
+.input h3 {
+    font-size: 50px;
+    width: 400px;
+    margin-bottom: 30px;
+    font-weight: 100;
+}
+#u-name,#u-email {
+    height: 3em;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#u-message {
+    margin-bottom: 20px;
+}
+#u-send {
+    color: white;
+    background-color: rgb(59, 220, 137);
+    box-shadow: 0px 10px 50px -10px rgb(59, 220, 137);
+    border: none;
+    padding: 8px 1.5em;
+    text-align: center;
+    margin: auto auto auto 0px;
+    border-radius: 5px;
+}
+/*  subscribe */
+.subscribe {
+    padding-bottom: 100px;
+    position: relative;
+}
+/* 雲 */
+.subscribe > img:nth-of-type(1) {
+    position: absolute;
+    right: -480px;
+    top: 100px;
+}
+.subscribe > img:nth-of-type(2) {
+    position: absolute;
+    left: -550px;
+    top: 0px;
+}
+.subscribe h3 {
+    font-size: 50px;
+    font-weight: 100;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+#u-email-sub {
+    height: 3em;
+    width: 450px;
+    border: none;
+}
+#u-email-sub+input {
+    color: white;
+    background-color: rgb(59, 220, 137);
+    box-shadow: 0px 10px 50px -10px rgb(59, 220, 137);
+    border: none;
+    padding: 1em 1.5em;
+    text-align: center;
+    margin: auto auto auto -10px;
+    border-radius: 5px;
+}
+/*  footer */
+.footer {
+    width: 100%;
+    background-color: rgb(253, 253, 253);
+}
+.foot-list {
+    display: flex;
+    justify-content: center;
+    width: 1600px;
+    margin: 0px auto;
+    padding-top: 100px;
+}
+.gutter-company {
+    width: 300px;
+}
+.contact-number {
+    margin: 40px 0px 10px 0px;
+}
+.gutter-info {
+    width: 300px;
+}
+.gutter-info p {
+    font-size: 26px;
+    margin-bottom: 50px;
+}
+.item {
+    margin-bottom: 10px;
+    color: #aaa;
+}
+.item :hover {
+    color: rgb(59, 220, 137);
+    transition: color .2s linear;
+}
+.gutter-socialnetworks {
+    width: 300px;
+    
+}
+.gutter-socialnetworks p {
+    font-size: 26px;
+    margin-bottom: 50px;
+}
+.gutter-socialnetworks .network-text {
+    font-size: 18px;
+    font-weight: 100;
+}
+.icongroup {
+    display: flex;
+}
+.icongroup a {
+    display: block;
+}
+.icon {
+    border-radius: 50%;
+    border: 1px #aaa solid;
+    margin-left: 8px;
+    padding: 3px;
+}
+.icongroup a :hover {
+    fill: #fff;
+    background-color: rgb(59, 220, 137);
+    border: 1px rgb(59, 220, 137) solid;
+    border-radius: 50%;
+}
+.footer-end {
+    display: flex;
+    margin: 100px 0px 20px 0px ;
+    justify-content: space-around;
+    font-size: 13px;
+}
+.copyright a {
+    color: rgb(59, 220, 137);
+}
+.copyright a:hover{
+    color: #aaa;
+}
+.foot-fun {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+}
+.foot-fun a:hover {
+    color: rgb(59, 220, 137);
+    transition: color .2s linear;
+}
