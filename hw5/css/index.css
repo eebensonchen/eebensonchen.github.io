@@ -674,3 +674,6 @@ a {
     color: rgb(59, 220, 137);
     transition: color .2s linear;
 }
+img {
+    vertical-align: bottom;
+}
