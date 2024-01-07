@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GuessGame</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- <div id="game-container">
+        <h1>猜數字遊戲-練習版</h1>
+        <p id="result">Fighting</p>
+        <p class="highlight">請輸入1~100之間的數字</p>
+        <input type="text" id="guess-input" value="" />
+        <input type="button" value="確認" class="btnConfirm" />
+        <input type="button" value="偷看答案" class="btnPeepAnswer" />
+        <input type="button" value="重置" class="btnReset" />
+        
+    </div> -->
+
+    <script>
+        //***********渲染**************
+        //**建立DOM
+        const gameContainer = document.createElement("div");
+        const gameTitle = document.createElement("h1");
+        const guessInput = document.createElement("input");
+        const btnConfirm = document.createElement("input");
+        const btnPeepAnswer = document.createElement("input");
+        const btnReset = document.createElement("input");
+        // const result = document.createElement("p");
+        const highlight = document.createElement("p");
+        //**架構
+        gameContainer.append(gameTitle);
+        // gameContainer.append(result);
+        gameContainer.append(highlight);
+        gameContainer.append(guessInput);
+        gameContainer.append(btnConfirm);
+        gameContainer.append(btnPeepAnswer);
+        gameContainer.append(btnReset);
+        document.body.append(gameContainer);
+        //**添加屬性
+        gameContainer.id = "game-container";
+        gameContainer.classList.add("card-body","text-center",);
+        //
+        gameTitle.innerText = "猜數字遊戲"
+        gameTitle.classList.add("card-title","p-3");
+        //
+        // result.id = "result";
+        // result.innerText = "Fighting";
+        // result.classList.add("card-text");
+        //
+        highlight.classList.add("highlight","card-text");
+        highlight.innerText = "請輸入1~100之間的數字";
+        //
+        guessInput.type = "text";
+        guessInput.id = "guess-input";
+        guessInput.value = "";
+        guessInput.classList.add("m-2");
+        //
+        btnConfirm.type = "button";
+        btnConfirm.value = "確認";
+        btnConfirm.classList.add("btnConfirm","btn","btn-primary","m-2");
+        //
+        btnPeepAnswer.type = "button";
+        btnPeepAnswer.value = "偷看答案";
+        btnPeepAnswer.classList.add("btnPeepAnswer","btn","btn-primary","m-2");
+        //
+        btnReset.type = "button";
+        btnReset.value = "重置";
+        btnReset.classList.add("btnReset","btn","btn-primary","m-2");
+        
+
+
+
+
+
+        //***********動作**************
+        //**startCode=1 endCode=100
+        let startCode = 1;
+        let endCode = 100;
+
+        //**一開始就產生finalCode
+        let finalCode = getFinalCode(startCode, endCode);
+        console.log(`finalCode is ${finalCode}`);
+
+        //
+        function getFinalCode(min, max) {
+            min = Math.ceil(min);  //無條件進位
+            max = Math.floor(max);  //無條件捨去
+            return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+        };
+        // console.log(getFinalCode(startCode, endCode));  //確認有數字出現
+
+        //**按下確認按鈕
+        btnConfirm.addEventListener("click", function (e) {
+            let inputNum = guessInput.value;
+            checkInputIsNum(inputNum);
+        });
+
+        //**確認輸入guessCode為數字，在startCode&endCode之間，若不是跳出"請輸入數字"、"請輸入startCode&endCode之間的數字"
+        function checkInputIsNum(inputNum) {
+            let num = parseInt(inputNum);  //轉換成整數
+            console.log(`inputNum: ${num}`);
+            if (isNaN(num)) {  //輸入若非整數，parseInt會傳"NaN"，用 isNaN 判斷
+                alert(`請輸入整數!!`);
+            } else if (num >= startCode && num <= endCode) {
+                //判斷guessCode是否等於finalCode
+                if (num == finalCode) {
+                    alert(`答對了，答案是${finalCode}!!`);
+                    reset();
+                } else if (num < finalCode && num > startCode) {
+                    //更換startCode or endCode
+                    startCode = num;
+                } else if (num > finalCode && num < endCode) {
+                    endCode = num;
+                }
+                highlight.innerText = `請輸入${startCode}~${endCode}之間的數字`;
+            } else {
+                alert(`請輸入${startCode}~${endCode}之間的數字`);
+            }
+            guessInput.value = "";
+        };
+
+        //**btnPeepAnswer
+        btnPeepAnswer.addEventListener("click", function (e) {
+            alert(`答案是: ${finalCode}`);
+        });
+
+        //**btnReset
+        btnReset.addEventListener("click", function (e) {
+            reset();
+        });
+
+        //**resetFn
+        function reset() {
+            startCode = 1;
+            endCode = 100;
+            finalCode = getFinalCode(startCode, endCode);
+            console.log(`finalCode is ${finalCode}`);
+            guessInput.value = "";
+            highlight.innerText = `請輸入${startCode}~${endCode}之間的數字`;
+        }
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
