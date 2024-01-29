@@ -80,7 +80,7 @@ function editingMode(todo, index) {
         <div class="check-area border border-1  border-dark-subtle bg-secondary-subtle">
             <input class="check-input" type="checkbox" id="check${index}" ${todo.completed ? "checked" : ""}>
         </div>
-        <textarea class="todo-edit bg-secondary-subtle border border-1 border-dark-subtle fs-5" id="todo-edit${index}" rows="1">${todo.content}</textarea>
+        <textarea class="todo-edit border border-1 border-dark-subtle fs-5" id="todo-edit${index}" rows="1">${todo.content}</textarea>
         <div class="btns">
             <button class="btn btn-store btn-success">儲存</button>
             <button class="btn btn-delete btn-danger">刪除</button>
