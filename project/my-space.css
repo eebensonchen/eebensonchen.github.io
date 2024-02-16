@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: inline;
+}
+
+/* ------------------------------------------ */
+.content {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin: 150px auto;
+}
+
+.title {
+    display: flex;
+    margin: 30px 0px;
+}
+
+.title h2 {
+    margin: 5px 10px;
+}
+
+.manage-list ul {
+    display: flex;
+    font-size: 16px;
+    border-bottom: solid 1px #aaa;
+}
+
+.manage-list ul li {
+    display: inline-block;
+    margin: 0px 30px 0px 0px;
+    padding-bottom: 30px;
+}
+
+a {
+    color: black;
+}
+
+.manage-list ul .my-space {
+    border-bottom: solid 3px #000;
+}
+
+.space-add {
+    margin: 30px 0px;
+}
+
+.space-add a {
+    display: flex;
+    color: #63E6BE;
+    align-items: center;
+}
+
+.space-add a p {
+    padding-left: 10px;
+    margin: 0px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.row .col {
+    width: 40%;
+}
+
+.func-nav-icon {
+    cursor: pointer;
+}
+
+.func-list {
+    width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+    margin: 0 0 0 -80px;
+    box-shadow:0 0 10px 0 #aaa;
+}
+
+.func-list a {
+    padding: 10px 34px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.func-list a:hover {
+    background-color: #d8f3e0;
+}

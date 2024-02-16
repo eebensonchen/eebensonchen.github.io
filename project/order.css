@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: inline;
+}
+
+/* ------------------------------------------ */
+.content {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin: 150px auto;
+}
+
+.title {
+    display: flex;
+    margin: 30px 0px;
+}
+
+.title h2 {
+    margin: 5px 10px;
+}
+
+.manage-list ul {
+    display: flex;
+    font-size: 16px;
+    border-bottom: solid 1px #aaa;
+}
+
+.manage-list ul li {
+    display: inline-block;
+    margin: 0px 30px 0px 0px;
+    padding-bottom: 30px;
+}
+
+a {
+    color: black;
+}
+
+.manage-list ul .selected {
+    border-bottom: solid 3px #000;
+}
+
+.order-add-detail {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px;
+}
+
+.order-add {
+    color: coral;
+    padding: 5px 10px;
+    border: solid 1px coral;
+    border-radius: 5rem;
+}
+
+.order-detail i {
+    margin: 10px 0px 0px 5px;
+}
+
+.order-status {
+    display: flex;
+    justify-content: space-between;
+}
+
+.status-count {
+    display: flex;
+    width: 23%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 15px;
+}
+
+.status-count .txt {
+    margin-right: 30px;
+    font-size: 14px;
+}
+
+.filter-group {
+    display: flex;
+    justify-content: end;
+    margin: 30px 0px;
+    font-size: 14px;
+    color: #777;
+}
+
+.filter-group p {
+    font-size: 20px;
+}
+
+.filter-modify {
+    padding: 5px 10px;
+    border-radius: 3px;
+    height: 30px;
+    border: solid 1px #ccc;
+}
+
+.area-id {
+    margin-right: 3px;
+}
+
+.date-type {
+    margin-right: 15px;
+}
+
+.date-start {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.date-end {
+    margin: 0px 15px 0px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-calendar {
+    
+    color: #333;
+    background-color: #eee;
+    box-sizing: border-box;
+    border: solid 1px #ccc;
+    margin-left: -1px;
+    border-radius: 3px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-calendar i {
+    padding: 0px 10px;
+}
+
+.keyword {
+    margin-right: 10px;
+    width: 100px;
+}
+
+.btn-filter {
+    color: #fff;
+    background-color: rgb(24, 3, 9);
+    border: solid 1px rgb(24, 3, 9);
+    border-radius: 5rem;
+    padding: 3px 20px;
+}
+
+.btn-filter:hover {
+    background-color: rgb(86, 73, 79);
+    border: solid 1px rgb(86, 73, 79);
+}
+
+.checkbox {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox p {
+    color: #aaa;
+    font-size: 14px;
+    margin: auto 0px;
+    padding-left: 5px;
+}
+
+.table-list {
+    border: solid 1px #ccc;
+    border-collapse: collapse;
+}
+
+.table-list th {
+    border: solid 1px #ccc;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.non-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.non-order i {
+    color: #777;
+    margin: 50px 0px 30px 0px;
+}
