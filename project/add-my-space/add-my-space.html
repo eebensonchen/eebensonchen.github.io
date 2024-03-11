@@ -1,0 +1,2682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentJoy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="add-my-space.css">
+    <link rel="stylesheet" href="add-my-space_benson.css">
+    <script src="https://kit.fontawesome.com/46728f4ec5.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <input type="checkbox" id="menu-switch">
+    <header>
+        <div class="logo-area">
+            <h1 class="logo-image">
+                <a href="./homepage.html">
+                    <img src="./images/RentJoy_Logo.jpeg" alt="">
+                </a>
+            </h1>
+        </div>
+        <nav class="nav">
+            <div class="nav-list">
+                <ul class="nav-menu">
+                    <li class="nav-item header-basic-information">
+                        <a href="#">基本資料</a>
+                    </li>
+                    <li class="nav-item header-location">
+                        <a href="#">位置</a>
+                    </li>
+                    <li class="nav-item header-spatial-configuration">
+                        <a href="#">空間配置</a>
+                    </li>
+                    <li class="nav-item header-equipment">
+                        <a href="#">設備</a>
+                    </li>
+                    <li class="nav-item header-photo">
+                        <a href="#">相片</a>
+                    </li>
+                    <li class="nav-item header-price">
+                        <a href="#">定價</a>
+                    </li>
+                    <li class="nav-item header-manager">
+                        <a href="#">管理者</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="save">
+                <a href="#">儲存並離開</a>
+            </div>
+        </nav>
+    </header>
+    <!-- header end -->
+
+    <!-- main -->
+    <main>
+        <section class="my-space-set">
+            <div class="basic-information">
+                <div class="left">
+                    <div class="container">
+                        <h3>請選擇您要出租的空間類型</h3><span>單選</span>
+                        <div class="space-type-button">
+                            <button type="button" class="btn btn-outline-success food-space">餐飲空間</button>
+                            <button type="button" class="btn btn-outline-success study-space"> 教室 · 學習空間</button>
+                            <button type="button" class="btn btn-outline-success business-space">商務空間</button>
+                            <button type="button" class="btn btn-outline-success multipurpose-space">多用途空間</button>
+                            <button type=" button" class="btn btn-outline-success sports-space">運動、健身空間</button>
+                            <button type="button" class="btn btn-outline-success music-space">音樂、藝術空間</button>
+                            <button type="button" class="btn btn-outline-success everyone-space">各類店家</button>
+                            <button type="button" class="btn btn-outline-success order-space">其他</button>
+                        </div>
+                        <div class="space-type-radio">
+                            <div class="detail-food" style="display: none;">
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="coffee"><label for="coffee">咖啡廳</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="restaurant"><label for="restaurant">餐廳</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="bar"><label for="bar">酒吧</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="nightclub"><label for="nightclub">夜店</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="teashope"><label for="teashope">手搖飲</label>
+                                </div>
+                            </div>
+                            <div class="detail-study" style="display: none;">
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="classroom"><label for="classroom">教室</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="studycenter"><label
+                                        for="studycenter">K書中心</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="library"><label for="library">圖書館</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="computerclassroom"><label
+                                        for="computerclassroom">電腦教室</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="cookingclassroom"><label
+                                        for="cookingclassroom">烹飪教室</label>
+                                </div>
+                            </div>
+                            <div class="detail-business" style="display: none;">
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="office"><label for="office">辦公室</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="meetingroom"><label
+                                        for="meetingroom">會議室</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="businesscenter"><label
+                                        for="businesscenter">商務中心</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="coworkingspace"><label
+                                        for="coworkingspace">共享工作空間</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="workspace"><label for="workspace">工作室</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="conferencecenter"><label
+                                        for="conferencecenter">會議中心</label>
+                                </div>
+                            </div>
+                            <div class="detail-multipurpose" style="display: none;">
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="auditorium"><label for="auditorium">禮堂</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="multipurposespace"><label
+                                        for="multipurposespace">多用途空間</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="communitycenter"><label
+                                        for="communitycenter">里民活動中心</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="lecturehall"><label
+                                        for="lecturehall">講堂</label>
+                                </div>
+                            </div>
+                            <div class="detail-sports" style="display: none;">
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="gym"><label for="gym">健身房</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="sportsfield"><label
+                                        for="sportsfield">球場</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="swimmingpool"><label
+                                        for="swimmingpool">游泳池</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="climbinggym"><label
+                                        for="climbinggym">攀岩館</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="skatepark"><label for="skatepark">滑板場</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="sportscenter"><label
+                                        for="sportscenter">運動中心</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="yogaroom"><label for="yogaroom">瑜伽/韻律教室</label>
+                                </div>
+                            </div>
+                            <div class="detail-music" style="display: none;">
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="artgallery"><label for="artgallery">藝廊</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="experimentaltheater"><label
+                                        for="experimentaltheater">實驗劇場</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="auditorium"><label for="auditorium">展演廳</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="livehouse"><label for="livehouse">Live
+                                        house</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="dancestudio"><label
+                                        for="dancestudio">舞蹈教室</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="artstudio"><label for="artstudio">藝術工作室</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="recordingstudio"><label
+                                        for="recordingstudio">錄音室</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="artclassroom"><label
+                                        for="artclassroom">畫室</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="practicestudio"><label
+                                        for="practicestudio">練團室</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="theater"><label for="theater">劇場</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="photostudio"><label
+                                        for="photostudio">攝影棚</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="cinema"><label for="cinema">電影院</label>
+                                </div>
+                            </div>
+                            <div class="detail-everyone" style="display: none;">
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="boardgameshop"><label
+                                        for="boardgameshop">桌遊店</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="flowerstore"><label
+                                        for="flowerstore">花店</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="bookstore"><label for="bookstore">書店</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="bakery"><label for="bakery">麵包店</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="guesthouse"><label for="guesthouse">民宿</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="hotel"><label for="hotel">飯店</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="salon"><label for="salon">沙龍</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="hairdresser"><label
+                                        for="hairdresser">髮廊</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="otherstore"><label
+                                        for="otherstore">其他店家</label>
+                                </div>
+                            </div>
+                            <div class="detail-order" style="display: none;">
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="storagespace"><label
+                                        for="storagespace">儲物空間</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="weddingvenue"><label
+                                        for="weddingvenue">婚宴會場</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="church"><label for="church">教堂</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="warehouse"><label for="warehouse">倉庫</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" name="space" id="other"><label for="other">其他</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-type-activity">
+                            <h3>適合舉辦的活動</h3><span>可複選</span>
+                            <div class="activity-checkbox">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="meet"><label for="meet">會議</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="party"><label for="party">派對</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="gathering"><label for="gathering">聚會</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="private"><label for="private">私人談話</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="course"><label for="course">課程講座</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="sports"><label for="sports">運動</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="work"><label for="work">工作</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="exhibition"><label for="exhibition">展覽</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="show"><label for="show">音樂/表演</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="wedding"><label for="wedding">婚禮</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="photograph"><label for="photograph">拍照/攝影</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="salon"><label for="salon">美容</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="cook"><label for="cook">烹飪</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="storage"><label for="storage">儲物</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="presentation"><label for="presentation">發表會</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="family"><label for="family">親子活動</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="other"><label for="other">其他</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-next">
+                            <button type="button" class="btn btn-success">下一步</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="container">
+                    </div>
+                </div>
+            </div>
+            <div class="location" style="display: none;">
+                <div class="left">
+                    <div class="container">
+                        <div class="location-address">
+                            <h3>地址</h3>
+                            <div class="address-select">
+                                <select class="city-select" id="">
+                                    <option value="">縣市</option>
+                                </select>
+                                <select class="district-select" id="">
+                                    <option value="">鄉鎮市區</option>
+                                </select>
+                                <input id="area-info-street-address" name="areaInfoStreetAddress" type="text"
+                                    placeholder="街道路名以及門牌號，樓層資訊請填於下方" value="">
+                            </div>
+                            <div class="address-level-room">
+                                <p>樓層</p>
+                                <select id="area-info-basement">
+                                    <option>地上</option>
+                                    <option>地下</option>
+                                </select>
+                                <input id="area-info-level" type="text">
+                                <p class="a">之</p>
+                                <input id="area-info-level2" type="text">
+                                <input id="area-info-room" type="text" value="">
+                            </div>
+                        </div>
+                        <div class="location-transportation">
+                            <h3>提供交通方式 <span>選填</span></h3>
+                        </div>
+                        <div class="transportation-row">
+                            <p>搭乘捷運</p>
+                            <input type="text" id="area-transportation-mrt" placeholder="例：大安站1號出口步行三分鐘">
+                        </div>
+                        <div class="transportation-row">
+                            <p>搭乘公車</p>
+                            <input type="text" id="area-transportation-bus" placeholder="例：200號公車站大安站步行5分鐘">
+                        </div>
+                        <div class="transportation-row">
+                            <p>開車或停車資訊</p>
+                            <input type="text" id="area-transportation-car" placeholder="例：於145巷右轉有專屬停車場">
+                        </div>
+                        <div class="btn-back-next">
+                            <div class="pre-step">
+                                <div class="back-img">
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <svg width="29px" height="30px" viewBox="0 0 29 30" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+                                        <title>Group 7@1x</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="上架wireframe-v1-copy-20"
+                                                transform="translate(-348.000000, -552.000000)" stroke="#53A385">
+                                                <g id="Group-7" transform="translate(348.000000, 552.000000)">
+                                                    <path
+                                                        d="M14.5,0.5001 C6.768,0.5001 0.5,6.7681 0.5,14.5001 C0.5,22.2321 6.768,28.5001 14.5,28.5001 C22.232,28.5001 28.5,22.2321 28.5,14.5001 C28.5,6.7681 22.232,0.5001 14.5,0.5001 Z"
+                                                        id="Stroke-1"></path>
+                                                    <path d="M20.2334,14.5001 L10.4754,14.5001" id="Stroke-3">
+                                                    </path>
+                                                    <polyline id="Stroke-5"
+                                                        points="14.2695 10.4 10.1685 14.5 14.2695 18.6">
+                                                    </polyline>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <button type="button" class="btn btn-success back">上一步</button>
+                            </div>
+                            <div class="next-step">
+                                <button type="button" class="btn btn-success next">下一步</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="container">
+                        <div id="map">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="spatialConfiguration" style="display: none;">
+                <div class="left">
+                    <div class="container">
+                        <h3>空間配置</h3>
+                        <div class="space-square">
+                            <p>空間大小</p>
+                            <input type="text" id="area-info-space-square">
+                            <p>坪</p>
+                        </div>
+                        <div class="space-people">
+                            <p>空間人數</p>
+                            <input type="text" id="area-info-space-people">
+                            <p>人</p>
+                        </div>
+                        <div class="btn-back-next">
+                            <div class="pre-step">
+                                <div class="back-img">
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <svg width="29px" height="30px" viewBox="0 0 29 30" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+                                        <title>Group 7@1x</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="上架wireframe-v1-copy-20"
+                                                transform="translate(-348.000000, -552.000000)" stroke="#53A385">
+                                                <g id="Group-7" transform="translate(348.000000, 552.000000)">
+                                                    <path
+                                                        d="M14.5,0.5001 C6.768,0.5001 0.5,6.7681 0.5,14.5001 C0.5,22.2321 6.768,28.5001 14.5,28.5001 C22.232,28.5001 28.5,22.2321 28.5,14.5001 C28.5,6.7681 22.232,0.5001 14.5,0.5001 Z"
+                                                        id="Stroke-1"></path>
+                                                    <path d="M20.2334,14.5001 L10.4754,14.5001" id="Stroke-3">
+                                                    </path>
+                                                    <polyline id="Stroke-5"
+                                                        points="14.2695 10.4 10.1685 14.5 14.2695 18.6">
+                                                    </polyline>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <button type="button" class="btn btn-success back">上一步</button>
+                            </div>
+                            <div class="next-step">
+                                <button type="button" class="btn btn-success next">下一步</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="container">
+                    </div>
+                </div>
+            </div>
+            <div class="equipment" style="display: none;">
+                <div class="left">
+                    <div class="container">
+                        <h3>設備</h3><span>選填</span>
+                        <div class="equipment-classification">
+                            <div class="equipment-classification-collapse">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">基礎設備</div>
+                                        <div class="expand-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd" stroke="#53A385">
+                                                    <path
+                                                        d="M1.5 14.5c0 7.732 6.269 14 14 14 7.732 0 14-6.268 14-14s-6.268-14-14-14c-7.731 0-14 6.268-14 14z" />
+                                                    <path d="M11.4 12.68l4.1 4.1 4.1-4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="equipment-classification-expand">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">基礎設備</div>
+                                        <div class="collapse-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#53A385" stroke="#53A385"
+                                                        d="M28.5 15.5c0-7.732-6.269-14-14-14-7.732 0-14 6.268-14 14s6.268 14 14 14c7.731 0 14-6.268 14-14z" />
+                                                    <path stroke="#FFF" d="M18.6 17.32l-4.1-4.1-4.1 4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="classification-item-detail">
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-01">
+                                                <label for="equipment-01" class="equipment-name">桌子</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-02">
+                                                <label for="equipment-02" class="equipment-name">折疊桌</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-03">
+                                                <label for="equipment-03" class="equipment-name">椅子</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-04">
+                                                <label for="equipment-04" class="equipment-name">折疊椅</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-05">
+                                                <label for="equipment-05" class="equipment-name">沙發</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-06">
+                                                <label for="equipment-06" class="equipment-name">板凳</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-07">
+                                                <label for="equipment-07" class="equipment-name">冷氣</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-08">
+                                                <label for="equipment-08" class="equipment-name">廁所</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-09">
+                                                <label for="equipment-09" class="equipment-name">無線網路</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-10">
+                                                <label for="equipment-10" class="equipment-name">延長線</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                            <div class="equipment-option">
+                                                <div class="equipment-title">
+                                                    <input type="checkbox" id="equipment-11">
+                                                    <label for="equipment-11" class="equipment-name">飲水機</label>
+                                                </div>
+                                                <div class="quantity-note">
+                                                    <div class="equipment-quantity">
+                                                        <p>數量</p>
+                                                        <div class="cal-quantity">
+                                                            <div class="minus-button"></div>
+                                                            <input type="number" name="equipment-num-input" value="0"
+                                                                min="1">
+                                                            <div class="plus-button"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="equipment-note">
+                                                        <p>規格或敘述</p>
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment-classification">
+                            <div class="equipment-classification-collapse">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">會議•辦公室設備</div>
+                                        <div class="expand-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd" stroke="#53A385">
+                                                    <path
+                                                        d="M1.5 14.5c0 7.732 6.269 14 14 14 7.732 0 14-6.268 14-14s-6.268-14-14-14c-7.731 0-14 6.268-14 14z" />
+                                                    <path d="M11.4 12.68l4.1 4.1 4.1-4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="equipment-classification-expand">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">會議•辦公室設備</div>
+                                        <div class="collapse-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#53A385" stroke="#53A385"
+                                                        d="M28.5 15.5c0-7.732-6.269-14-14-14-7.732 0-14 6.268-14 14s6.268 14 14 14c7.731 0 14-6.268 14-14z" />
+                                                    <path stroke="#FFF" d="M18.6 17.32l-4.1-4.1-4.1 4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="classification-item-detail">
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-12">
+                                                <label for="equipment-12" class="equipment-name">黑板</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-13">
+                                                <label for="equipment-13" class="equipment-name">粉筆</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-14">
+                                                <label for="equipment-14" class="equipment-name">白板</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-15">
+                                                <label for="equipment-15" class="equipment-name">白板筆</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-16">
+                                                <label for="equipment-16" class="equipment-name">磁鐵</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-17">
+                                                <label for="equipment-17" class="equipment-name">事務機</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0
+                                                            min=" 1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-18">
+                                                <label for="equipment-18" class="equipment-name">電腦</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" vale="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment-classification">
+                            <div class="equipment-classification-collapse">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">影音設備</div>
+                                        <div class="expand-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd" stroke="#53A385">
+                                                    <path
+                                                        d="M1.5 14.5c0 7.732 6.269 14 14 14 7.732 0 14-6.268 14-14s-6.268-14-14-14c-7.731 0-14 6.268-14 14z" />
+                                                    <path d="M11.4 12.68l4.1 4.1 4.1-4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="equipment-classification-expand">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">影音設備</div>
+                                        <div class="collapse-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#53A385" stroke="#53A385"
+                                                        d="M28.5 15.5c0-7.732-6.269-14-14-14-7.732 0-14 6.268-14 14s6.268 14 14 14c7.731 0 14-6.268 14-14z" />
+                                                    <path stroke="#FFF" d="M18.6 17.32l-4.1-4.1-4.1 4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="classification-item-detail">
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-19">
+                                                <label for="equipment-19" class="equipment-name">投影機</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-20">
+                                                <label for="equipment-20" class="equipment-name">投影幕</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-21">
+                                                <label for="equipment-21" class="equipment-name">轉接頭</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-22">
+                                                <label for="equipment-22" class="equipment-name">投影筆</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipmentnum-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-23">
+                                                <label for="equipment-23" class="equipment-name">螢幕/電視</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-24">
+                                                <label for="equipment-24" class="equipment-name">麥克風</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-25">
+                                                <label for="equipment-25" class="equipment-name">音響設備</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-26">
+                                                <label for="equipment-26" class="equipment-name">隔音設備</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-27">
+                                                <label for="equipment-27" class="equipment-name">相機/攝影機</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment-classification">
+                            <div class="equipment-classification-collapse">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">廚房設備</div>
+                                        <div class="expand-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd" stroke="#53A385">
+                                                    <path
+                                                        d="M1.5 14.5c0 7.732 6.269 14 14 14 7.732 0 14-6.268 14-14s-6.268-14-14-14c-7.731 0-14 6.268-14 14z" />
+                                                    <path d="M11.4 12.68l4.1 4.1 4.1-4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="equipment-classification-expand">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">廚房設備</div>
+                                        <div class="collapse-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#53A385" stroke="#53A385"
+                                                        d="M28.5 15.5c0-7.732-6.269-14-14-14-7.732 0-14 6.268-14 14s6.268 14 14 14c7.731 0 14-6.268 14-14z" />
+                                                    <path stroke="#FFF" d="M18.6 17.32l-4.1-4.1-4.1 4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="classification-item-detail">
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-28">
+                                                <label for="equipment-28" class="equipment-name">廚房</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-29">
+                                                <label for="equipment-29" class="equipment-name">餐具</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-30">
+                                                <label for="equipment-30" class="equipment-name">鍋具</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div> <input type="number"
+                                                            name="equipment-num-input" value="0" min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-31">
+                                                <label for="equipment-31" class="equipment-name">微波爐</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div> <input type="number"
+                                                            name="equipment-num-input" value="0" min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-32">
+                                                <label for="equipment-32" class="equipment-name">烤箱</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-33">
+                                                <label for="equipment-33" class="equipment-name">冰箱</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-34">
+                                                <label for="equipment-34" class="equipment-name">電磁爐</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment-classification">
+                            <div class="equipment-classification-collapse">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">娛樂設備</div>
+                                        <div class="expand-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd" stroke="#53A385">
+                                                    <path
+                                                        d="M1.5 14.5c0 7.732 6.269 14 14 14 7.732 0 14-6.268 14-14s-6.268-14-14-14c-7.731 0-14 6.268-14 14z" />
+                                                    <path d="M11.4 12.68l4.1 4.1 4.1-4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="equipment-classification-expand">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">娛樂設備</div>
+                                        <div class="collapse-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#53A385" stroke="#53A385"
+                                                        d="M28.5 15.5c0-7.732-6.269-14-14-14-7.732 0-14 6.268-14 14s6.268 14 14 14c7.731 0 14-6.268 14-14z" />
+                                                    <path stroke="#FFF" d="M18.6 17.32l-4.1-4.1-4.1 4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="classification-item-detail">
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-35">
+                                                <label for="equipment-35" class="equipment-name">卡拉OK</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-36">
+                                                <label for="equipment-36" class="equipment-name">電子遊戲機</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-37">
+                                                <label for="equipment-37" class="equipment-name">烤肉用具</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-38">
+                                                <label for="equipment-38" class="equipment-name">桌遊</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment-classification">
+                            <div class="equipment-classification-collapse">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">附加設施</div>
+                                        <div class="expand-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd" stroke="#53A385">
+                                                    <path
+                                                        d="M1.5 14.5c0 7.732 6.269 14 14 14 7.732 0 14-6.268 14-14s-6.268-14-14-14c-7.731 0-14 6.268-14 14z" />
+                                                    <path d="M11.4 12.68l4.1 4.1 4.1-4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="equipment-classification-expand">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">附加設施</div>
+                                        <div class="collapse-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#53A385" stroke="#53A385"
+                                                        d="M28.5 15.5c0-7.732-6.269-14-14-14-7.732 0-14 6.268-14 14s6.268 14 14 14c7.731 0 14-6.268 14-14z" />
+                                                    <path stroke="#FFF" d="M18.6 17.32l-4.1-4.1-4.1 4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="classification-item-detail">
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-39">
+                                                <label for="equipment-39" class="equipment-name">樂團設備</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-40">
+                                                <label for="equipment-40" class="equipment-name">包廂</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-41">
+                                                <label for="equipment-41" class="equipment-name">休息室</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-42">
+                                                <label for="equipment-42" class="equipment-name">電梯</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-43">
+                                                <label for="equipment-43" class="equipment-name">停車位</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-44">
+                                                <label for="equipment-44" class="equipment-name">戶外空間</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-45">
+                                                <label for="equipment-45" class="equipment-name">攝影棚</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="quipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-46">
+                                                <label for="equipment-46" class="equipment-name">無障礙空間</label>
+                                            </div>
+                                            <iv class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="equipment-option">
+                                        <div class="equipment-title">
+                                            <input type="checkbox" id="equipment-47">
+                                            <label for="equipment-47" class="equipment-name">舞台</label>
+                                        </div>
+                                        <div class="quantity-note">
+                                            <div class="equipment-quantity">
+                                                <p>數量</p>
+                                                <div class="cal-quantity">
+                                                    <div class="minus-button"></div>
+                                                    <input type="number" name="equipment-num-input" value="0" min="1">
+                                                    <div class="plus-button"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="equipment-note">
+                                                <p>規格或敘述</p>
+                                                <input type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="equipment-option">
+                                        <div class="equipment-title">
+                                            <input type="checkbox" id="equipment-48">
+                                            <label for="equipment-48" class="equipment-name">泳池</label>
+                                        </div>
+                                        <div class="quantity-note">
+                                            <div class="equipment-quantity">
+                                                <p>數量</p>
+                                                <div class="cal-quantity">
+                                                    <div class="minus-button"></div>
+                                                    <input type="number" name="equipment-num-input" value="0" min="1">
+                                                    <div class="plus-button"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="equipment-note">
+                                                <p>規格或敘述</p>
+                                                <input type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment-classification">
+                            <div class="equipment-classification-collapse">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">週邊設施</div>
+                                        <div class="expand-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd" stroke="#53A385">
+                                                    <path
+                                                        d="M1.5 14.5c0 7.732 6.269 14 14 14 7.732 0 14-6.268 14-14s-6.268-14-14-14c-7.731 0-14 6.268-14 14z" />
+                                                    <path d="M11.4 12.68l4.1 4.1 4.1-4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="equipment-classification-expand">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">週邊設施</div>
+                                        <div class="collapse-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#53A385" stroke="#53A385"
+                                                        d="M28.5 15.5c0-7.732-6.269-14-14-14-7.732 0-14 6.268-14 14s6.268 14 14 14c7.731 0 14-6.268 14-14z" />
+                                                    <path stroke="#FFF" d="M18.6 17.32l-4.1-4.1-4.1 4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="classification-item-detail">
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-49">
+                                                <label for="equipment-49" class="equipment-name">大眾運輸系統</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-50">
+                                                <label for="equipment-50" class="equipment-name">停車場</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-51">
+                                                <label for="equipment-51" class="equipment-name">便利商店•超市</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-52">
+                                                <label for="equipment-52" class="equipment-name">餐飲店</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment-classification">
+                            <div class="equipment-classification-collapse">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">餐飲服務</div>
+                                        <div class="expand-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd" stroke="#53A385">
+                                                    <path
+                                                        d="M1.5 14.5c0 7.732 6.269 14 14 14 7.732 0 14-6.268 14-14s-6.268-14-14-14c-7.731 0-14 6.268-14 14z" />
+                                                    <path d="M11.4 12.68l4.1 4.1 4.1-4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="equipment-classification-expand">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">餐飲服務</div>
+                                        <div class="collapse-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#53A385" stroke="#53A385"
+                                                        d="M28.5 15.5c0-7.732-6.269-14-14-14-7.732 0-14 6.268-14 14s6.268 14 14 14c7.731 0 14-6.268 14-14z" />
+                                                    <path stroke="#FFF" d="M18.6 17.32l-4.1-4.1-4.1 4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="classification-item-detail">
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-53">
+                                                <label for="equipment-53" class="equipment-name">飲料提供<label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-54">
+                                                <label for="equipment-54" class="equipment-name">餐點提供<label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-55">
+                                                <label for="equipment-55" class="eqipment-name">外燴服務</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-56">
+                                                <label for="equipment-56" class="equipment-name">可帶外食</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment-classification">
+                            <div class="equipment-classification-collapse">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">服務</div>
+                                        <div class="expand-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd" stroke="#53A385">
+                                                    <path
+                                                        d="M1.5 14.5c0 7.732 6.269 14 14 14 7.732 0 14-6.268 14-14s-6.268-14-14-14c-7.731 0-14 6.268-14 14z" />
+                                                    <path d="M11.4 12.68l4.1 4.1 4.1-4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="equipment-classification-expand">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">服務</div>
+                                        <div class="collapse-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#53A385" stroke="#53A385"
+                                                        d="M28.5 15.5c0-7.732-6.269-14-14-14-7.732 0-14 6.268-14 14s6.268 14 14 14c7.731 0 14-6.268 14-14z" />
+                                                    <path stroke="#FFF" d="M18.6 17.32l-4.1-4.1-4.1 4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="classification-item-detail">
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-57">
+                                                <label for="equipment-57" class="equipment-name">現場人員駐點</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-58">
+                                                <label for="equipment-58" class="equipment-name">可吸菸</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-59">
+                                                <label for="quipment-59" class="equipment-name">可烹調</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-60">
+                                                <label for="equipment-60" class="equipment-name">可帶小孩</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-61">
+                                                <label for="equipment-61" class="equipment-name">寵物友善</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-62">
+                                                <label for="equipment-62" class="equipment-name">自由調整擺設</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-63">
+                                                <label for="equipment-63" class="equipment-name">垃圾代收</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="equipment-classification">
+                            <div class="equipment-classification-collapse">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">安全•急救設備</div>
+                                        <div class="expand-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd" stroke="#53A385">
+                                                    <path
+                                                        d="M1.5 14.5c0 7.732 6.269 14 14 14 7.732 0 14-6.268 14-14s-6.268-14-14-14c-7.731 0-14 6.268-14 14z" />
+                                                    <path d="M11.4 12.68l4.1 4.1 4.1-4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="equipment-classification-expand">
+                                <div class="classification-item-area">
+                                    <div class="classification-item-title">
+                                        <div class="classification-name">安全•急救設備</div>
+                                        <div class="collapse-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                viewBox="0 0 30 30">
+                                                <g fill="none" fill-rule="evenodd">
+                                                    <path fill="#53A385" stroke="#53A385"
+                                                        d="M28.5 15.5c0-7.732-6.269-14-14-14-7.732 0-14 6.268-14 14s6.268 14 14 14c7.731 0 14-6.268 14-14z" />
+                                                    <path stroke="#FFF" d="M18.6 17.32l-4.1-4.1-4.1 4.1" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="classification-item-detail">
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="euipment-64">
+                                                <label for="equipment-64" class="equipment-name">滅火器</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-65">
+                                                <label for="equipment-65" class="equipment-name">地震包</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-66">
+                                                <label for="equipment-66" class="equipment-name">緩降機</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-67">
+                                                <label for="equipment-67" class="equipment-name">急救箱</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <div class="equipment-title">
+                                                <input type="checkbox" id="equipment-68">
+                                                <label for="equipment-68" class="equipment-name">灑水器</label>
+                                            </div>
+                                            <div class="quantity-note">
+                                                <div class="equipment-quantity">
+                                                    <p>數量</p>
+                                                    <div class="cal-quantity">
+                                                        <div class="minus-button"></div>
+                                                        <input type="number" name="equipment-num-input" value="0"
+                                                            min="1">
+                                                        <div class="plus-button"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="equipment-note">
+                                                    <p>規格或敘述</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="equipment-option">
+                                            <divclass="equipment-title">
+                                                <input type="checkbox" id="equipment-69">
+                                                <label for="equipment-69" class="equipment-name">煙霧偵測器</label>
+                                        </div>
+                                        <div class="quantity-note">
+                                            <div class="equipment-quantity">
+                                                <p>數量</p>
+                                                <div class="cal-quantity">
+                                                    <div class="minus-button"></div>
+                                                    <input type="number" name="equipment-num-input" value="0" min="1">
+                                                    <div class="plus-button"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="equipment-note">
+                                                <p>規格或敘述</p>
+                                                <input type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="equipment-option">
+                                        <div class="equipment-title">
+                                            <input type="checkbox" id="equipment-70">
+                                            <label for="equipment-70" class="equipment-name">火災警報器</label>
+                                        </div>
+                                        <div class="quantity-note">
+                                            <div class="equipment-quantity">
+                                                <p>數量</p>
+                                                <div class="cal-quantity">
+                                                    <div class="minus-button"></div>
+                                                    <input type="number" name="equipment-num-input" value="0" min="1">
+                                                    <div class="plus-button"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="equipment-note">
+                                                <p>規格或敘述</p>
+                                                <input type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-back-next">
+                            <div class="pre-step">
+                                <div class="back-img">
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <svg width="29px" height="30px" viewBox="0 0 29 30" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+                                        <title>Group 7@1x</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="上架wireframe-v1-copy-20"
+                                                transform="translate(-348.000000, -552.000000)" stroke="#53A385">
+                                                <g id="Group-7" transform="translate(348.000000, 552.000000)">
+                                                    <path
+                                                        d="M14.5,0.5001 C6.768,0.5001 0.5,6.7681 0.5,14.5001 C0.5,22.2321 6.768,28.5001 14.5,28.5001 C22.232,28.5001 28.5,22.2321 28.5,14.5001 C28.5,6.7681 22.232,0.5001 14.5,0.5001 Z"
+                                                        id="Stroke-1"></path>
+                                                    <path d="M20.2334,14.5001 L10.4754,14.5001" id="Stroke-3">
+                                                    </path>
+                                                    <polyline id="Stroke-5"
+                                                        points="14.2695 10.4 10.1685 14.5 14.2695 18.6">
+                                                    </polyline>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <button type="button" class="btn btn-success back">上一步</button>
+                            </div>
+                            <div class="next-step">
+                                <button type="button" class="btn btn-success next">下一步</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="container">
+                        <div class="prompt">
+                            <?xml version="1.0" encoding="UTF-8"?>
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+                                <title>Group 5 Copy@1x</title>
+                                <desc>Created with Sketch.</desc>
+                                <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="上架畫面01-copy-7" transform="translate(-864.000000, -676.000000)"
+                                        stroke="#EE8545" stroke-width="2">
+                                        <g id="Group-5-Copy" transform="translate(865.000000, 677.000000)">
+                                            <path
+                                                d="M11.0001,22.0002 C17.0751,22.0002 22.0001,17.0752 22.0001,11.0002 C22.0001,4.9252 17.0751,0.0002 11.0001,0.0002 C4.9251,0.0002 0.0001,4.9252 0.0001,11.0002 C0.0001,17.0752 4.9251,22.0002 11.0001,22.0002 Z"
+                                                id="Stroke-1"></path>
+                                            <polyline id="Stroke-3"
+                                                points="13.3849 4.7253 7.3319 10.7783 15.1109 10.7783 8.7649 17.1243">
+                                            </polyline>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>請確實填寫設備數量，清楚的設備資訊可大幅提升預訂率</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="photo" style="display: none;">
+                <div class="left">
+                    <div class="container">
+                        <h3>上傳空間相片</h3>
+                        <div>上傳至少3張不同角度的相片</div>
+                        <div class="photos-area">
+                            <input type="file" id="add-new-photo-file" accept="img/png, img/jpeg, img/jpg, img/bmp">
+                            <input id="photo-url" type="hidden">
+                            <div class="add-new-photo">
+                                <img src="./images/add-time-price-button.svg" alt="add-new-photo">
+                                <p>新增</p>
+                            </div>
+                            <div class="photo-item img-org">
+                                <input type="hidden" class="img-url">
+                                <div class="photo-pic">
+                                    <input type="radio" class="black-section" id="new-photo-radio-0" name="area-cover-photo">
+                                    <label for="new-photo-radio-0">
+                                        <div class="cover-content">
+                                            <div class="outer-circle">
+                                                <div class="inner-circle"></div>
+                                            </div>
+                                            <p>設為封面</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <img src="./images/cross-orange.svg" class="cross">
+                            </div>
+                            <div class="photo-item upload-img" id="uploaded-img-0">
+                                <input type="hidden" class="img-url" value="">
+                                <div class="photo-pic" style="background-image:url('https://images.unsplash.com/photo-1682687982501-1e58ab814714?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                                    <input type="radio" class="black-section" id="uploaded-photo-radio-0" name="area-cover-photo" checked="checked">
+                                    <label for="uploaded-photo-radio-0">
+                                        <div class="cover-content">
+                                            <div class="outer-circle">
+                                                <div class="inner-circle"></div>
+                                            </div>
+                                            <p>設為封面</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <img src="./images/cross-orange.svg" class="cross">
+                            </div>
+                            <div class="photo-item upload-img" id="uploaded-img-1">
+                                <input type="hidden" class="img-url" value="">
+                                <div class="photo-pic" style="background-image:url('https://images.unsplash.com/photo-1682687982501-1e58ab814714?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                                    <input type="radio" class="black-section" id="uploaded-photo-radio-1" name="area-cover-photo" checked="checked">
+                                    <label for="uploaded-photo-radio-1">
+                                        <div class="cover-content">
+                                            <div class="outer-circle">
+                                                <div class="inner-circle"></div>
+                                            </div>
+                                            <p>設為封面</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <img src="./images/cross-orange.svg" class="cross">
+                            </div>
+                            <div class="photo-item upload-img" id="uploaded-img-2">
+                                <input type="hidden" class="img-url" value="">
+                                <div class="photo-pic" style="background-image:url('https://images.unsplash.com/photo-1682687982501-1e58ab814714?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                                    <input type="radio" class="black-section" id="uploaded-photo-radio-2" name="area-cover-photo" checked="checked">
+                                    <label for="uploaded-photo-radio-2">
+                                        <div class="cover-content">
+                                            <div class="outer-circle">
+                                                <div class="inner-circle"></div>
+                                            </div>
+                                            <p>設為封面</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                <img src="./images/cross-orange.svg" class="cross">
+                            </div>
+                        </div>
+                        <div class="btn-back-next">
+                            <div class="pre-step">
+                                <div class="back-img">
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <svg width="29px" height="30px" viewBox="0 0 29 30" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+                                        <title>Group 7@1x</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="上架wireframe-v1-copy-20"
+                                                transform="translate(-348.000000, -552.000000)" stroke="#53A385">
+                                                <g id="Group-7" transform="translate(348.000000, 552.000000)">
+                                                    <path
+                                                        d="M14.5,0.5001 C6.768,0.5001 0.5,6.7681 0.5,14.5001 C0.5,22.2321 6.768,28.5001 14.5,28.5001 C22.232,28.5001 28.5,22.2321 28.5,14.5001 C28.5,6.7681 22.232,0.5001 14.5,0.5001 Z"
+                                                        id="Stroke-1"></path>
+                                                    <path d="M20.2334,14.5001 L10.4754,14.5001" id="Stroke-3">
+                                                    </path>
+                                                    <polyline id="Stroke-5"
+                                                        points="14.2695 10.4 10.1685 14.5 14.2695 18.6">
+                                                    </polyline>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <button type="button" class="btn btn-success back">上一步</button>
+                            </div>
+                            <div class="next-step">
+                                <button type="button" class="btn btn-success next">下一步</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="container">
+                        <div class="prompt">
+                            <?xml version="1.0" encoding="UTF-8"?>
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+                                <title>Group 5 Copy@1x</title>
+                                <desc>Created with Sketch.</desc>
+                                <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="上架畫面01-copy-7" transform="translate(-864.000000, -676.000000)"
+                                        stroke="#EE8545" stroke-width="2">
+                                        <g id="Group-5-Copy" transform="translate(865.000000, 677.000000)">
+                                            <path
+                                                d="M11.0001,22.0002 C17.0751,22.0002 22.0001,17.0752 22.0001,11.0002 C22.0001,4.9252 17.0751,0.0002 11.0001,0.0002 C4.9251,0.0002 0.0001,4.9252 0.0001,11.0002 C0.0001,17.0752 4.9251,22.0002 11.0001,22.0002 Z"
+                                                id="Stroke-1"></path>
+                                            <polyline id="Stroke-3"
+                                                points="13.3849 4.7253 7.3319 10.7783 15.1109 10.7783 8.7649 17.1243">
+                                            </polyline>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            <span>各種角度的照片能取代場勘需求。<br> 光線充足的照片能讓訂購率大增。</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="price" style="display: none;">
+                <div class="left">
+                    <div class="container">
+                        <div class="btn-back-next">
+                            <div class="pre-step">
+                                <div class="back-img">
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <svg width="29px" height="30px" viewBox="0 0 29 30" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+                                        <title>Group 7@1x</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="上架wireframe-v1-copy-20"
+                                                transform="translate(-348.000000, -552.000000)" stroke="#53A385">
+                                                <g id="Group-7" transform="translate(348.000000, 552.000000)">
+                                                    <path
+                                                        d="M14.5,0.5001 C6.768,0.5001 0.5,6.7681 0.5,14.5001 C0.5,22.2321 6.768,28.5001 14.5,28.5001 C22.232,28.5001 28.5,22.2321 28.5,14.5001 C28.5,6.7681 22.232,0.5001 14.5,0.5001 Z"
+                                                        id="Stroke-1"></path>
+                                                    <path d="M20.2334,14.5001 L10.4754,14.5001" id="Stroke-3">
+                                                    </path>
+                                                    <polyline id="Stroke-5"
+                                                        points="14.2695 10.4 10.1685 14.5 14.2695 18.6">
+                                                    </polyline>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <button type="button" class="btn btn-success back">上一步</button>
+                            </div>
+                            <div class="next-step">
+                                <button type="button" class="btn btn-success next">下一步</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="container">
+                    </div>
+                </div>
+            </div>
+            <div class="manager" style="display: none;">
+                <div class="left">
+                    <div class="container">
+                        <div class="btn-back-next">
+                            <div class="pre-step">
+                                <div class="back-img">
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <svg width="29px" height="30px" viewBox="0 0 29 30" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+                                        <title>Group 7@1x</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="上架wireframe-v1-copy-20"
+                                                transform="translate(-348.000000, -552.000000)" stroke="#53A385">
+                                                <g id="Group-7" transform="translate(348.000000, 552.000000)">
+                                                    <path
+                                                        d="M14.5,0.5001 C6.768,0.5001 0.5,6.7681 0.5,14.5001 C0.5,22.2321 6.768,28.5001 14.5,28.5001 C22.232,28.5001 28.5,22.2321 28.5,14.5001 C28.5,6.7681 22.232,0.5001 14.5,0.5001 Z"
+                                                        id="Stroke-1"></path>
+                                                    <path d="M20.2334,14.5001 L10.4754,14.5001" id="Stroke-3">
+                                                    </path>
+                                                    <polyline id="Stroke-5"
+                                                        points="14.2695 10.4 10.1685 14.5 14.2695 18.6">
+                                                    </polyline>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <button type="button" class="btn btn-success back">上一步</button>
+                            </div>
+                            <div class="next-step">
+                                <button type="button" class="btn btn-success next">下一步</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="container">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./add-my-space.js"></script>
+</body>
+
+</html>
