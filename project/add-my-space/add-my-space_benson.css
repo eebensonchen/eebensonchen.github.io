@@ -1,3 +1,4 @@
+/* ************** */
 /* equipment */
 .equipment-classification {
     border-bottom: solid 1px #999;
@@ -106,6 +107,7 @@
     text-align: justify;
 }
 
+/* ************** */
 /* photo */
 #add-new-photo-file {
     display: none;
@@ -114,9 +116,25 @@
 .photos-area {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.add-new-photo, .photo-pic {
+.photos-area .empty {
+    width: 140px;
+    height: 140px;
+    margin: 0 0 30px 0;
+}
+
+.photo-pic {
+    width: 140px;
+    height: 140px;
+    background-image: url(https://images.unsplash.com/photo-1630371860607-a2de3b6dd5cf?q=80&w=1635&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+}
+
+.add-new-photo, .photo-item {
     display: flex;
     width: 140px;
     height: 140px;
@@ -131,4 +149,896 @@
     margin-left: 10px;
     font-size: 16px;
     color: #53a385;
+}
+
+.photo-item .cross {
+    cursor: pointer;
+    position: absolute;
+    margin: -122px 0 0 122px;
+}
+
+.black-section {
+    /* 隱藏input,自己做圓圈點選 */
+    display: none;
+}
+
+.black-section + label {
+    color: #fff;
+    height: 46px;
+    width: 100%;
+}
+
+.black-section + label .cover-content {
+    display: flex;
+    margin: 10px 0 0 10px;
+}
+
+.cover-content .outer-circle {
+    width: 24px;
+    height: 24px;
+    border: solid 1px #999;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 0 0;
+}
+
+.cover-content .outer-circle .inner-circle {
+    width: 12px;
+    height: 12px;
+    border: solid 1px #53a385;
+    background-color: #53a385;
+    border-radius: 50%;
+}
+
+/* ************** */
+/* price */
+
+.create-plan {
+    display: flex;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+    margin: 0 0 20px 0;
+}
+
+.create-plan .create {
+    display: flex;
+    margin: 5px 20px 0 0;
+}
+
+.create-plan .create p {
+    color: #53a385;
+    margin-left: 10px;
+}
+
+.create-plan .create img {
+    width: 22px;
+    height: 22px;
+}
+
+.create-plan .text .title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.create-plan .text .example {
+    flex: 12px;
+    color: #aaa;
+}
+
+.edit-plan {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#hour-edit-plan {
+    border-bottom: solid 1px #ccc;
+}
+
+.edit-plan .switch-fn {
+    display: flex;
+}
+
+.edit-plan .switch-fn .checkbox-switch {
+    margin: 4px 20px 0 0;
+}
+
+.checkbox-switch input[type=checkbox] {
+    display: none;
+}
+
+.checkbox-switch input[type=checkbox]+label {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.checkbox-switch input[type=checkbox]+label .switch-background {
+    height: 22px;
+    border-radius: 10.5px;
+    background-color: #d8d8d8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3px;
+    transition: .4s;
+    margin: 0 10px 0 0;
+}
+
+#hour-edit-plan .checkbox-switch input[type=checkbox]:checked+label .switch-background {
+    background-color: #3d5d74;
+}
+
+#period-edit-plan .checkbox-switch input[type=checkbox]:checked+label .switch-background {
+    background-color: #2383c9;
+}
+
+.switch-background .close-text {
+    color: #9b9b9b;
+}
+
+.checkbox-switch input[type=checkbox]:checked+label .close-text {
+    display: none;
+}
+
+.switch-background .open-text {
+    color: #fff;
+}
+
+.checkbox-switch input[type=checkbox]:checked+label .open-text {
+    display: block;
+}
+
+.checkbox-switch input[type=checkbox]+label .open-text {
+    display: none;
+}
+
+.checkbox-switch input[type=checkbox]+label .switch-background .switch {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 0 1px;
+    background-color: #4a4a4a;
+}
+
+.checkbox-switch input[type=checkbox]:checked+label .switch-background .switch {
+    background-color: #fff;
+}
+
+.edit-plan .switch-fn .text .title {
+    font-size: 20px;
+}
+
+#hour-edit-plan .switch-fn .text .title {
+    color: #3d5d74;
+}
+
+#period-edit-plan .switch-fn .text .title {
+    color: #2383c9;
+}
+
+.edit-plan .switch-fn .text .detail {
+    font-size: 16px;
+}
+
+.edit-plan .switch-fn .text .detail span {
+    color: #000;
+}
+
+.edit {
+    width: 77px;
+    height: 45px;
+    border: solid 1px #53a385;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color: #53a385;
+}
+
+.specific-plan h3 {
+    font-size: 24px;
+}
+
+.open-day .checkbox-switch {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.open-day .checkbox-switch input[type=checkbox]:checked+label .switch-background {
+    background-color: #95bfaf;
+}
+
+.specific-plan .open-day .checkbox-switch label {
+    margin-top: 10px;
+}
+
+.weekday-text {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.time-price-input-wrapper .time-price-input-group {
+    display: flex;
+}
+
+.time-price-input-org {
+    display: none;
+}
+
+.open-label .time-price-input .input-row {
+    display: flex;
+    align-items: center;
+}
+
+.open-label .time-price-input .input-row .time {
+    display: flex;
+}
+
+.open-label .time-price-input .input-row .price {
+    display: flex;
+    margin: 0 0 0 22px;
+    align-items: center;
+}
+
+.open-label .time-price-input .input-row img {
+    margin: 0 0 0 15px;
+    cursor: pointer;
+}
+
+.open-label .time-price-input .input-row .time select {
+    border: none;
+    color: #4a4a4a;
+    appearance: none;
+    background-image: url(./images/double-arrow-hover.svg);
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-size: 8px 18px;
+    padding: 0 14px 0 0;
+    cursor: pointer;
+}
+
+.open-label .time-price-input .input-row .time .dash {
+    margin: 0 10px;
+}
+
+.open-label .time-price-input .input-row p {
+    font-size: 16px;
+}
+
+.open-label .time-price-input .input-row input[type=number] {
+    width: 70px;
+    height: 40px;
+    border-radius: 5px;
+    margin:  0 7px;
+    border: solid 1px #9b9b9b;
+    text-align: center;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.time-price-input-group {
+    border-bottom: solid 1px #ccc;
+    padding-bottom: 30px;
+}
+
+.open-label .add-time-price-button {
+    display: flex;
+    align-items: center;
+    color: #53a385;
+    cursor: pointer;
+    margin: 20px 0 ;
+}
+
+.open-day {
+    border-bottom: solid 1px #ccc;
+}
+
+.least-time {
+    margin: 40px 0 0 0;
+}
+
+.least-time p {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+}
+
+.number-input {
+    display: flex;
+    align-items: center;
+}
+
+.number-input .minus-button,.number-input .plus-button {
+    cursor: pointer;
+}
+
+.number-input input[type=number] {
+    width: 70px;
+    height: 45px;
+    border-radius: 5px;
+    border: solid 1px #9b9b9b;
+    text-align: center;
+    margin: 0 10px;
+} 
+
+.back-area {
+    margin: 30px 0 0 0;
+    padding: 20px 0 0 0;
+    border-top: solid 1px #d8d8d8;
+    display: flex;
+    justify-content: end;
+}
+
+.back-area .back-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #53a385;
+    font-size: 14px;
+}
+
+.back-area .back-button img {
+    margin: 0 10px 0 0;
+}
+
+.price-table {
+    position: fixed;
+}
+
+.outside .price-table {
+    position: absolute;
+}
+
+.price-bar-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 0 3px 0;
+}
+
+.price-bar-wrapper p {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin: 0 10px 0 0;
+}
+
+.price-bar-wrapper .price-bar {
+    width: 416px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px #d8d8d8;
+    background-color: #d8d8d8;
+    display: flex;
+    justify-content: center;
+}
+
+.price-bar .price {
+    width: 2.0833%;
+    height: 100%;
+}
+
+.price-bar .price .note {
+    height: 76px;
+    border-radius: 2px;
+    background-color: #fff;
+    position: absolute;
+    padding: 15px;
+    margin: 40px 0 0 -55px;
+    display: none;
+}
+
+.price-table .time-label {
+    display: flex;
+    justify-content: space-between;
+    width: 433px;
+    margin: 0 0 0 33px;
+} 
+
+.price-table .time-label .price-label {
+    display: none;
+}
+
+.price-table .time-label .price-label-show {
+    display: block;
+    color: #ccc;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+/* ************** */
+/*  manager */
+.manager .left .container .area-manager {
+    padding-bottom: 80px;
+    width: 458px;
+}
+
+.area-manager h3 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
+.left .green {
+    font-size: 14px;
+    color: #95bfaf;
+}
+
+.select-box {
+    height: 60px;
+    border-radius: 5px;
+    border: solid 1px #9b9b9b;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-image: url(./images/double-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    padding: 0 30px 0 15px;
+}
+
+.select-box .selected-manager-img {
+    margin: 0 10px 0 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.select-box .selected-manager {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.select-box p {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.select-box .selected-dropdown,.select-box .select-dropdown {
+    position: absolute;
+    min-height: 142px;
+    max-height: 300px;
+    overflow-y: scroll;
+    top: 270px;
+    margin: 5px 0 0 -16px;
+    border-radius: 5px;
+    box-shadow: 0 0 7px 1px;
+    background-color: #fff;
+}
+
+.create-button,.edit-button {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.select-box .selected-dropdown .select-row .border-container {
+    width: 100%;
+    border-top: 1px solid #efefef;
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+}
+
+.select-box .selected-dropdown .select-row .border-container .img {
+    margin: 0 10px 0 0;
+    width: 30px;
+    height: 30px;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.select-box .selected-dropdown .select-row .border-container p {
+    font-size: 16px;
+    color: #53a385;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.select-box .selected-dropdown .title {
+    font-size: 16px;
+    color: #9b9b9b;
+    margin: 20px 0;
+    padding: 0 15px;
+}
+
+.select-box .selected-dropdown .manager-option label {
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.select-box .selected-dropdown .manager-option-org label {
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.select-box .selected-dropdown .manager-option input[type=radio] {
+    display: none;
+}
+
+.select-box .selected-dropdown .manager-option-org input[type=radio] {
+    display: none;
+}
+
+.select-box .selected-dropdown .select-row {
+    padding: 0 15px;
+}
+
+.selected-dropdown {
+    display: none;
+}
+
+.create-manager .content {
+    display: flex;
+    margin: 30px 0 0 0;
+}
+
+.create-manager .content .profile-pic {
+    width: 100px;
+    margin: 0 25px 0 0;
+}
+
+.create-manager .content .profile-pic .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.create-manager .content .profile-pic .upload-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+}
+
+.create-manager .content .profile-pic .upload-button img {
+    margin: 0 10px 0 0;
+}
+
+.create-manager .content .profile-pic .upload-button p {
+    font-size: 16px;
+    color: #53a385;
+    margin: 0;
+}
+
+.create-manager .content .manager-form {
+    width: 332px;
+}
+
+.create-manager .content .manager-form .bold {
+    font-size: 18px;
+    margin: 0 0 26px 0;
+}
+
+.create-manager .content .manager-form .input-row {
+    margin: 0 0 30px 0;
+}
+
+.create-manager .content .manager-form .input-row p {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin: 0 0 9px 0;
+}
+
+.create-manager .content .manager-form .input-row p .required-star {
+    color: #95bfaf;
+}
+
+.create-manager .content .manager-form .input-row input[type=text] {
+    font-size: 16px;
+    color: #4a4a4a;
+}
+
+input[type=text] {
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: solid 1px #9b9b9b;
+    padding: 0  15px;
+}
+
+.create-manager .content .manager-form .manager-bank-code-name .select-box .selected-bank {
+    font-size: 16px;
+    margin: 0;
+    color: #4a4a4a;
+    font-weight: 400;
+}
+
+.create-manager .content .manager-form .manager-bank-code-name .select-box .select-dropdown {
+    margin: 1005px 0 0 -16px;
+    width: 332px;
+    height: 306px;
+    overflow: scroll;
+}
+
+.create-manager .content .manager-form .manager-bank-code-name .select-box .select-dropdown .title {
+    padding: 20px 0 20px 15px;
+    margin: 0;
+    color: #9b9b9b;
+}
+
+.create-manager .content .manager-form .manager-bank-code-name .select-box .select-dropdown .select-list .bank-row input[type=radio] {
+    display: none;
+}
+
+.create-manager .content .manager-form .manager-bank-code-name .select-box .select-dropdown .select-list .bank-row .select-row {
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.select-box .select-dropdown .select-row {
+    padding: 0 15px;
+}
+
+.select-box .select-dropdown .select-row .border-container {
+    width: 100%;
+    border-top:  1px solid #efefef;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.create-manager .content .manager-form .button-row {
+    display: flex;
+    justify-items: flex-end;
+}
+
+.create-manager .content .manager-form .button-row .cancel {
+    width: 92px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid #53a385;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px 0 0;
+    cursor: pointer;
+}
+
+.create-manager .content .manager-form .button-row .cancel p {
+    margin: 0;
+    font-size: 16px;
+    color: #53a385;
+}
+
+.create-manager .content .manager-form .button-row .create {
+    width: 120px;
+    height: 45px;
+    border-radius: 5px;
+    border: 10px solid #53a385;
+    background-color: #53a385;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.create-manager .content .manager-form .button-row .create p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.manager-detail .title {
+    font-size: 16px;
+    color: #4a4a4a;
+}
+
+.detail-text .detail-row {
+    display: flex;
+}
+
+.detail-text .detail-row .left-contact {
+    width: 56px;
+    margin: 0 30px 0 0;
+    font-size: 14px;
+    color: #9b9b9b;
+}
+
+.detail-text .detail-row .right-contact {
+    font-size: 14px;
+    color: #4a4a4a;
+    max-width: 340px;
+    margin-bottom: 1rem;
+}
+
+.detail-row .edit-button {
+    margin: 0 0 0 86px;
+}
+
+.edit-button img {
+    margin: 0 10px 0 0;
+}
+
+.edit-button p {
+    font-size: 16px;
+    color: #53a385;
+    margin: 0;
+}
+
+.delete-button {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0 0 50px;
+}
+
+.delete-button .img {
+    width: 30px;
+    height: 30px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-image: url(./images/cross-gray.svg);
+    margin: 0 10px 0 0;
+}
+
+.delete-button:hover .img {
+    background-image: url(./images/cross-orange-hover.svg);
+}
+
+.delete-button p {
+    font-size: 16px;
+    margin: 0;
+    color: #9b9b9b;
+}
+
+.delete-button:hover p {
+    color: #ee552a;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 0.5rem;
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 9px 9px 20px 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-top-left-radius: 0.3rem;
+    border-top-left-radius: 0.3rem;
+}
+
+.modal-header .modal-title {
+    margin: 21px 0 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #4a4a4a;
+}
+
+.modal-header .close-btn {
+    background-image: url(./images/cross-black.svg);
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 17px 17px;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+#admin-delete-check .modal-body {
+    text-align: center;
+}
+
+.modal-body {
+    padding: 0 30px 30px 0;
+    position: relative;
+    flex: 1 1 auto;
+}
+
+#admin-delete-check .modal-body img {
+    margin-bottom: 20px;
+}
+
+#admin-delete-check .modal-body .bold-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4a4a4a;
+}
+
+#admin-delete-check .modal-body p {
+    margin: 0 0 20px 0;
+}
+
+#admin-delete-check .modal-body .button-row {
+    display: flex;
+}
+
+#admin-delete-check .modal-body .button-row .back-button {
+    width: 124px;
+    height: 44px;
+    border: 1px solid #53a385;
+    border-radius: 5px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#admin-delete-check .modal-body .button-row .back-button p {
+    color: #53a385;
+    margin: 0;
+}
+
+#admin-delete-check .modal-body .button-row .delete-button {
+    width: 124px;
+    height: 44px;
+    border: 1px solid #53a385;
+    border-radius: 5px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #53a385;
+}
+
+#admin-delete-check .modal-body .button-row .delete-button p {
+    color: #fff;
+    margin: 0;
 }
